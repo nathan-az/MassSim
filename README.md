@@ -13,6 +13,11 @@ My initial method calculated gravitational acceleration at each time step, incre
 
 ## Images
 
+![Moon-Earth Orbit](imgs/moon_earth_orbit.png)
+
+![Three-body solution, Matt Sheen init params example1](imgs/three_body_mws262_ex1.png)
+
+
 ### Sources
 [Initial reference on RK4](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
 

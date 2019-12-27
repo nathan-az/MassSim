@@ -30,7 +30,7 @@ def figure_eight():
     return [p1, p2, p3]
 
 
-particles = Particles(figure_eight(G=1), G=1)
+particles = Particles(figure_eight(), G=1)
 fig, ax = plt.subplots()
 ax.set_xlim(-3, 3)
 ax.set_ylim(-3, 3)
