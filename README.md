@@ -1,15 +1,24 @@
 # MassSim
 
 ## Introduction
-This project was started when a friend introduced me to the Chinese novel, The Three-Body Problem. Google yielded the wikipedia page for the Three Body Problem in classical mechanics. In this repository, my latest attempt to simulate n-bodies in N dimensions.
+This project began when a friend introduced me to the Chinese novel, The Three-Body Problem. Google instead returned the wikipedia page for the Three Body Problem in classical mechanics. In this repository, my latest attempt to simulate n-bodies in N dimensions as an introduction to numerical analysis methods and simulation. Note that this project makes no attempt to find solutions/initial parameters to the Three-Body Problem.
 
 ## Notes
-I am fully aware that Python has modules that will far more effectively approximate ODEs (i.e. scipy.integrate.odeint). Implementing rk4 was a learning experience and a first stab at numerical analysis (broad familiarity with Euler method aside).
+I am fully aware that Python has modules (i.e. scipy.integrate.odeint) that will far more effectively approximate ODEs than my own implementation. Implementing rk4 was a learning experience and a first stab at numerical analysis (broad familiarity with Euler method aside).
 
-Secondarily, a class system was introduced for the sake of practicing Python OOP having learned with Java. I have not tested but it is likely that storing a single numpy array of initial parameters would improve the rk4 implementation (but if I was concerned with runtime, I wouldn't have implemented myself!)
+A class system was built for the sake of practicing Python OOP. I have not tested but it is likely that storing a single numpy array of initial parameters would improve the rk4 runtime (but if I was concerned with runtime, I wouldn't have implemented myself!)
 
 ## Methodology
-My initial method calculated gravitational acceleration at each time step, incremented velocities by the given amount, and incremented position in each direction by the velocity vector. This proved a poor approximation, stepping by a full time unit each iteration. I considered using scipy.integrate.odeint but found it to be inflexible. Despite no further use for this project, I wanted an implementation that would be entirely flexible in the number of bodies (n) and the dimension. This may still have been posible with the scipy module but I hastile scratched together a python implementation that iterated across each body and its neighbours (flexible in n) and performed operations at a vector level for position and velocity (flexible in dim).
+My initial method calculated gravitational acceleration at each time step, incremented velocities by the given amount, and incremented position in each direction by the velocity vector. This proved a poor approximation, stepping by a full time unit each iteration. I considered using scipy.integrate.odeint but found it to be inflexible. I came across rk4 when reading through a project simulating fluid dynamics around a cylinder. It only took a bit of research to adapt it to mass systems (conversion of 2nd-order ODE to 1st-order ODEs). 
+
+The secondary benefit of my own implementation was flexibility (despite no further use for this project). I wanted an implementation that would be entirely flexible in the number of bodies (n) and the dimension. This may still have been posible with the scipy module but I did not immediately think of one, so began scratching together the current python implementation. The implementation works as follows:
+
+1. Pick a body
+2. (rk4) Increment each factor by the effect of its neighbours and prior dependent factors
+3. Once all factors are completed, save the next step values for velocity and position in an array
+4. Repeat until next step values for all bodies are completed
+5. Update body attributes (position and velocity vectors)
+6. Repeat
 
 ## Images
 
