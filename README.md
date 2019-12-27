@@ -22,11 +22,11 @@ The secondary benefit of my own implementation was flexibility (despite no furth
 
 ## Images
 
-Below are snapshots from two simulations. The first is an approximation of the orbit of the moon around the Earth (mass = 10 vs mass = 1). Similar radius not used for scale. The second is a solution to the Three-Body Problem with initial parameters from Matt Sheen's repo (example 1) linked in sources
+Below are snapshots from two simulations. The first is an approximation of the orbit of the moon around the Earth (mass = 10 vs mass = 1). Similar radius not used for scale. The second is a solution to the Three-Body Problem with initial parameters from Matt Sheen's repo (example 1 [5]) linked in sources
 
 ![Moon-Earth Orbit](imgs/moon_earth_orbit.png)
 
-![\[5] Three-body solution, Matt Sheen init params example1](imgs/three_body_mws262_ex1.png)
+![Three-body solution, Matt Sheen init params example1](imgs/three_body_mws262_ex1.png)
 
 
 ### Sources
