@@ -13,6 +13,9 @@ My initial method calculated gravitational acceleration at each time step, incre
 
 ### Sources
 [Initial reference on RK4](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
+
 [Initial reference on Three-body problem](https://en.wikipedia.org/wiki/Three-body_problem)
+
 [Research on first-order setup of gravitational systems](http://spiff.rit.edu/richmond/nbody/OrbitRungeKutta4.pdf) Note that this document has an error on the k-coefficients of the position ODE, must be addition e.g. k2r = k1r + k1v * (h/2), not k2r = k1r * k1v * (h/2)
+
 [Matplotlib documentation and examples for animation, particlarly double-pendulum example](https://matplotlib.org/3.1.1/gallery/animation/double_pendulum_sgskip.html)
